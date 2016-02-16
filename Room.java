@@ -40,6 +40,11 @@ public class Room {
         south = southDoors[number];
     }
 
+    //Return the value of coffee for a room
+    public boolean getCoffee(){
+        return this.coffee;
+    }
+
     //Display room
     public void displayRoom(){
         System.out.println("You see a " + this.adj + " room.");
@@ -53,29 +58,32 @@ public class Room {
         System.out.println("");
     }
 
-    //Implements the look command. Returns an int corresponding to which ingredient was found
-    // 1 = cream, 2 = coffee, 3 = sugar, 0 = no ingredient found
+    //Implements the look command. Returns 1 if an ingredient was found, 0 if nothing found
     public int look(Inventory i){
         if (this.cream){
             System.out.println("There might be something here...");
             System.out.println("You found some creamy cream!");
             System.out.println("");
             i.updateCream(true);
+            return 1;
         }
         else if (this.coffee){
             System.out.println("There might be something here...");
             System.out.println("You found some caffeinated coffee!");
             System.out.println("");
             i.updateCoffee(true);
+            return 1;
         }
         else if (this.sugar){
             System.out.println("There might be something here...");
             System.out.println("You found some sweet sugar!");
             System.out.println("");
             i.updateSugar(true);
+            return 1;
         }
         System.out.println("You don't see anything out of the ordinary.");
         System.out.println("");
         return 0;
     }
 }
+
