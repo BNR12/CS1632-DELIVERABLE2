@@ -18,14 +18,29 @@ public class Inventory {
         this.coffee = c;
     }
 
+    //Get coffee
+    public boolean getCoffee(){
+        return coffee;
+    }
+
     //Update cream
     public void updateCream(boolean c){
         this.cream = c;
     }
 
+    //Get cream
+    public boolean getCream(){
+        return cream;
+    }
+
     //Update sugar
     public void updateSugar(boolean s){
         this.sugar = s;
+    }
+
+    //Get sugar
+    public boolean getSugar(){
+        return sugar;
     }
 
     //Display inventory
@@ -54,12 +69,13 @@ public class Inventory {
     }
 
     //Drink command
-    //Returns false to quit the play loop in the driver
+    //Returns false if lost, true if won
     public boolean drink(){
         this.displayInventory();
         if (this.coffee && this.cream && this.sugar){
             System.out.println("You drink the beverage and are ready to study!");
             System.out.println("You win!");
+            return true;
         }
         else if (!this.coffee && !this.cream && !this.sugar){
             System.out.println("You drink the air, as you have no coffee, sugar, or cream.");
