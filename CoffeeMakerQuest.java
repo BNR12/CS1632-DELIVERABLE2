@@ -53,7 +53,8 @@ public class CoffeeMakerQuest {
                 }
                 else if (temp.equals("d") || temp.equals("D")){
                     //drink
-                    play = inventory.drink();
+                    inventory.drink();
+                    play = false;
                 }
                 else if (temp.equals("h") || temp.equals("H")){
                     //display help menu
@@ -79,3 +80,4 @@ public class CoffeeMakerQuest {
         System.out.println("");
     }
 }
+
